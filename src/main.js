@@ -26,7 +26,7 @@ const createWorkflowRunFilter = () => {
 
     const workflowRunId = getInput(INPUT_WORKFLOW_RUN_ID);
     if (workflowRunId != "") {
-        debug(`Exact run ID ${workflowRunId} wast set. Taking precedence over other filters.`);
+        debug(`Exact run ID ${workflowRunId} was set. Taking precedence over other filters.`);
         return filterBuilder
             .setWorkflowRunId(workflowRunId)
             .build();
