@@ -67,10 +67,11 @@ async function runAction() {
 
     const repository = getInput(INPUT_REPOSITORY) || getRepositoryName();
     const workflow = getInput(INPUT_WORKFLOW) || getWorkflowName();
+    const dir = getInput(DIRECTORY) || os.tmpdir();
 
     if (getRepositoryName() == repository && getWorkflowName() == workflow) {
         debug(`Downloading image artifact from the same workflow. `)
-        const download = getDownloader(createArtifactDownloader(), containerEngineName);
+        const download = getDownloader(createArtifactDownloader(), containerEngineName, container, dir);
         const downloadPath = await download(imageName);
 
         writeOutput(OUTPUT_DOWNLOAD_PATH, downloadPath);
