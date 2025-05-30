@@ -1,4 +1,4 @@
-
+const os = require('os');
 const { getDownloader, createArtifactDownloader, createOctokitArtifactDownloader } = require('container-image-artifact');
 
 const { getInput, writeOutput, debug, fail } = require('./actions_io');
@@ -67,7 +67,7 @@ async function runAction() {
 
     const repository = getInput(INPUT_REPOSITORY) || getRepositoryName();
     const workflow = getInput(INPUT_WORKFLOW) || getWorkflowName();
-    const dir = getInput(INPUT_DIRECTORY);
+    const dir = getInput(INPUT_DIRECTORY) || os.tmpdir();
 
     debug(`Starting to download image ${imageName} to ${dir}`);
 
