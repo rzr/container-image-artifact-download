@@ -63,11 +63,12 @@ async function runAction() {
     const imageName = getInput(INPUT_IMAGE, true);
     const containerEngineName = getInput(INPUT_CONTAINER_ENGINE);
     debug(`Using ${containerEngineName}`);
-    debug(`Starting to download image ${imageName}`);
 
     const repository = getInput(INPUT_REPOSITORY) || getRepositoryName();
     const workflow = getInput(INPUT_WORKFLOW) || getWorkflowName();
     const dir = getInput(DIRECTORY) || os.tmpdir();
+
+    debug(`Starting to download image ${imageName} to ${dir}`);
 
     if (getRepositoryName() == repository && getWorkflowName() == workflow) {
         debug(`Downloading image artifact from the same workflow. `)
