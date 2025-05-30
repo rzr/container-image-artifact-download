@@ -67,7 +67,7 @@ async function runAction() {
 
     const repository = getInput(INPUT_REPOSITORY) || getRepositoryName();
     const workflow = getInput(INPUT_WORKFLOW) || getWorkflowName();
-    const dir = getInput(INPUT_DIRECTORY) || os.tmpdir();
+    const dir = getInput(INPUT_DIRECTORY);
 
     debug(`Starting to download image ${imageName} to ${dir}`);
 
