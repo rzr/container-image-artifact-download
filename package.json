@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "@actions/core": "^1.10",
-    "container-image-artifact": "github:rzr/container-image-artifact#semver:main",
+    "container-image-artifact": "github:rzr/container-image-artifact#main",
     "ncc": "^0.2.0",
     "original-fs": "^1.2"
   },
