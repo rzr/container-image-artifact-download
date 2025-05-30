@@ -16,7 +16,7 @@ const INPUT_TOKEN = 'token';
 const INPUT_WORKFLOW_CONCLUSION = "workflow_conclusion";
 const INPUT_COMMIT_SHA = "commit_sha";
 const INPUT_BRANCH = "branch";
-const INPUT_DIRECTORY = "";
+const INPUT_DIRECTORY = "directory";
 const INPUT_WORKFLOW_EVENT = "workflow_event";
 const INPUT_WORKFLOW_RUN_ID = "workflow_run_id";
 
