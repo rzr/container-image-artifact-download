@@ -71,7 +71,7 @@ async function runAction() {
 
     if (getRepositoryName() == repository && getWorkflowName() == workflow) {
         debug(`Downloading image artifact from the same workflow. `)
-        const download = getDownloader(createArtifactDownloader(), containerEngineName, container, dir);
+        const download = getDownloader(createArtifactDownloader(), containerEngineName, dir);
         const downloadPath = await download(imageName);
 
         writeOutput(OUTPUT_DOWNLOAD_PATH, downloadPath);
@@ -93,7 +93,7 @@ async function runAction() {
     const download = getDownloader(createOctokitArtifactDownloader(
         token, owner, repo, workflow,
         createWorkflowRunFilter()
-    ), containerEngineName)
+    ), containerEngineName, dir)
     const downloadPath = await download(imageName);
     writeOutput(OUTPUT_DOWNLOAD_PATH, downloadPath);
 }
